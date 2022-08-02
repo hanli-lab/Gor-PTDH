@@ -1,0 +1,85 @@
+# chemical restraints for NMN binding to PTDH
+
+#distanceAB - Res1:Atom1 = Res2:Atom1
+#angle_A    - Res1:Atom2 - Res1:Atom1 - Res2:Atom1
+#angle_B    - Res1:Atom1 - Res2:Atom1 - Res2:Atom2
+#torsion_A  - dihedral Res1:Atom3 - Res1:Atom2 - Res1:Atom1 - Res2:Atom1
+#torsion_B  - dihedral Res1:Atom1 - Res2:Atom1 - Res2:Atom2 - Res2:Atom3
+#torsion_AB - dihedral Res1:Atom2 - Res1:Atom1 - Res2:Atom1 - Res2:Atom2
+
+#optimum, tolerance, force constant, covalent(dist; ignore vdw)/periodicity(keep 360)
+
+# D261 to NMN carboxamide
+
+CST::BEGIN
+  TEMPLATE::	ATOM_MAP: 1 atom_name: OD2 CG CB
+  TEMPLATE::	ATOM_MAP: 1 residue1: D
+  TEMPLATE::	ATOM_MAP: 2 atom_name: N2 C8 C7
+  TEMPLATE::	ATOM_MAP: 2 residue3: X00
+  CONSTRAINT::	distanceAB: 3.1	0.2 500.0 1
+  CONSTRAINT::  angle_A: 135.0 20.0 500.0 360
+  CONSTRAINT::  angle_B: 116.2 20.0 500.0 360
+  CONSTRAINT::  torsion_A: 21.6 10.0 500.0 360
+  CONSTRAINT::  torsion_B: 165.9 20.0 500.0 360
+  CONSTRAINT::  torsion_AB: 174.0 20.0 500.0 360
+CST::END
+
+# K76 to NMN phosphate
+
+CST::BEGIN
+  TEMPLATE::  ATOM_MAP: 1 atom_name: NZ CE CD
+  TEMPLATE::  ATOM_MAP: 1 residue1: K
+  TEMPLATE::  ATOM_MAP: 2 atom_name: P1 O4 C1
+  TEMPLATE::  ATOM_MAP: 2 residue3: X00
+  CONSTRAINT::  distanceAB: 3.6 0.5 500.0 0
+  #CONSTRAINT::  angle_A:
+  #CONSTRAINT::  angle_B:
+  #CONSTRAINT::  torsion_A:
+  #CONSTRAINT::  torsion_B:
+  #CONSTRAINT::  torsion_AB:
+CST::END
+
+# P235 to NMN carboxamide
+
+CST::BEGIN
+  TEMPLATE::  ATOM_MAP: 1 atom_name: O C CA
+  TEMPLATE::  ATOM_MAP: 1 residue1: P
+  TEMPLATE::  ATOM_MAP: 2 atom_name: N2 C8 C7
+  TEMPLATE::  ATOM_MAP: 2 residue3: X00
+  CONSTRAINT::  distanceAB: 2.8 0.3 500.0 1
+  #CONSTRAINT::  angle_A:
+  CONSTRAINT::  angle_B: 120.0 30.0 500.0 360
+  #CONSTRAINT::  torsion_A:
+  #CONSTRAINT::  torsion_B:
+  CONSTRAINT::  torsion_AB: -175.0 30.0 500.0 360
+CST::END
+
+# R237 to NMN ribose hydroxyl
+
+CST::BEGIN
+  TEMPLATE::  ATOM_MAP: 1 atom_name: NH1 CZ NE
+  TEMPLATE::  ATOM_MAP: 1 residue1: R
+  TEMPLATE::  ATOM_MAP: 2 atom_name: C6 N1 C7
+  TEMPLATE::  ATOM_MAP: 2 residue3: X00
+  CONSTRAINT::  distanceAB: 3.6 0.5 500.0 0
+  #CONSTRAINT::  angle_A:
+  CONSTRAINT::  angle_B: 93.2 10.0 500.0 360
+  #CONSTRAINT::  torsion_A:
+  CONSTRAINT::  torsion_B: 130.0 20.0 500.0 360
+  #CONSTRAINT::  torsion_AB:
+CST::END
+
+# K76 and ASN155
+CST::BEGIN
+  TEMPLATE::  ATOM_MAP: 1 atom_name: NZ CE CD
+  TEMPLATE::  ATOM_MAP: 1 residue1: K
+  TEMPLATE::  ATOM_MAP: 2 atom_name: OD1 CG ND2
+  TEMPLATE::  ATOM_MAP: 2 residue3: ASN
+  CONSTRAINT::  distanceAB: 2.8 0.5 500.0 0
+  #CONSTRAINT::  angle_A:
+  #CONSTRAINT::  angle_B:
+  #CONSTRAINT::  torsion_A:
+  #CONSTRAINT::  torsion_B:
+  #CONSTRAINT::  torsion_AB:
+CST::END
+ 

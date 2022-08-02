@@ -1,0 +1,27 @@
+-packing::ex1
+-packing::ex2
+-packing::ex1aro:level 6
+-packing::ex2aro
+-packing::extrachi_cutoff 1
+-packing::use_input_sc
+-packing::flip_HNQ
+-packing::no_optH false
+-packing::optH_MCA false
+
+-jd2:enzdes_out
+-linmem_ig 10
+-nblist_autoupdate
+-run:preserve_header
+
+-enzdes:bb_min_allowed_dev 0.5
+
+
+-parser:protocol dock.xml
+-enzdes::cstfile ptdh_nmn.cst
+-s PtDH_WT.pdb
+-extra_res_fa X00.params
+-parser:script_vars target1=155A new_res1=ASN
+-parser:script_vars target2=175A new_res2=TRP
+-parser:script_vars target3=176A new_res3=GLY
+-parser:script_vars target4=208A new_res4=VAL
+-nstruct 10
