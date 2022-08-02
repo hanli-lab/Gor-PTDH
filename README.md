@@ -1,4 +1,4 @@
-This is the Rosetta docking protocol used in the manuscript from Professor Han Li lab at UCI and Professor Justin Siegel lab at UC Davis. The Rosetta files listed here are for docking the ligand NMN and PS-PTDH LY-7 variant. Rosetta version: 2018.24.post.dev+17.master.450949e 450949e481542459ae6534e867a61fe9709846be
+This is the Rosetta docking protocol used in the manuscript from Professor Han Li lab at UC Irvine and Professor Justin Siegel lab at UC Davis. The Rosetta files listed here are for docking the ligand NMN and PS-PTDH LY-7 variant. Rosetta version: 2018.24.post.dev+17.master.450949e 450949e481542459ae6534e867a61fe9709846be
 
 In order to successfully run the simulation, all the files are required:
 1.  PDB file with the target ligand NMN bound in the active site. (PtDH_WT.pdb)
